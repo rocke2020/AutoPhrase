@@ -73,7 +73,8 @@ You can change ```RAW_TRAIN``` to your own corpus and you may also want change `
 
 #### Phrasal Segmentation
 
-We also provide an auxiliary function to highlight the phrases in context based on our phrasal segmentation model. There are two thresholds you can tune in the top of the script. The model can also handle unknown tokens (i.e., tokens which are not occurred in the phrase mining step's corpus).
+We also provide an aux
+iliary function to highlight the phrases in context based on our phrasal segmentation model. There are two thresholds you can tune in the top of the script. The model can also handle unknown tokens (i.e., tokens which are not occurred in the phrase mining step's corpus).
 
 In the beginning, you need to specify AutoPhrase's segmentation model, i.e., ```MODEL```. The default value is set to be consistent with ```auto_phrase.sh```.
 
@@ -183,4 +184,3 @@ directory in question is "DATA_DIR".
 The ```sudo``` command won't work in a Windows bash shell, and in any case isn't needed in an elevated window--replace it with ```winpty```.
 
 In addition, the ```PWD``` variable works a little oddly in MinGW (the Git bash shell), appending ";C" to the end of the path. To prevent this, replace ```$PWD/models:/autophrase/models``` with ```"/${PWD}/models":/autophrase/models```, and ```$PWD/data/autophrase/data``` with ```"/${PWD}/data:/autophrase/data```.
-
