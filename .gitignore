@@ -4,6 +4,6 @@ models/disease*/
 Python/
 results/
 tmp/
-
+data/EN/wiki_quality.txt
 *.orig
 *.pyc

@@ -6,9 +6,11 @@ import json
 from pprint import pprint
 import os, sys
 import string
+import shutil
 
-orig_file = 'data/EN/wiki_quality.txt'
-orig_file2 = 'data/EN/wiki_quality_orig.txt'
+
+orig_file = Path('data/EN/wiki_quality.txt')
+orig_file2 = Path('data/EN/wiki_quality_orig.txt')
 dictionaries_dir = '/home/qcdong/codes/pathway-autoner/data/dictionaries'
 
 alpha_pat = re.compile(r'[a-zA-Z]')
@@ -28,6 +30,8 @@ def clean_wiki_quality_phrase():
             f.write(line)
 
 def merge_quality_phrases():
+    orig_file.unlink()
+    shutil.copy(orig_file2, orig_file)
     with open(orig_file, 'a', encoding='utf-8') as orig_f:
         for txt_file in Path(dictionaries_dir).glob('*.txt'):
             with open(txt_file, 'r', encoding='utf-8') as f:
